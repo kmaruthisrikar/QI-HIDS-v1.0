@@ -3,6 +3,9 @@
 
 ---
 
+[![DOI](https://zenodo.org/badge/1154117254.svg)](https://doi.org/10.5281/zenodo.18596236)
+
+
 ## 📑 Table of Contents
 
 1. [Executive Summary](#1-executive-summary)
