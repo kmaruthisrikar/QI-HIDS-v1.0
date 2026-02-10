@@ -1,9 +1,11 @@
 # QI-HIDS v1.0: Complete Technical Documentation
-## Quantum-Inspired Tunneling Learning Intrusion Detection System - A to Z Guide
+## Quantum-Inspired Tunneling Learning Intrusion Detection System
 
 ---
 
 [![DOI](https://zenodo.org/badge/1154117254.svg)](https://doi.org/10.5281/zenodo.18596236)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
 
 
 ## 📑 Table of Contents
