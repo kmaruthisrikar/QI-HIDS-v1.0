@@ -7,7 +7,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
 
-
+**Full Math guide** : https://github.com/kmaruthisrikar/QI-HIDS-v1.0/blob/main/Quantum-inspired-maths.md 
 ## 📑 Table of Contents
 
 1. [Executive Summary](#1-executive-summary)
