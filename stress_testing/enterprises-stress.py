@@ -83,7 +83,7 @@ X, y = loader.load_data(sample_size=5000)
 X = torch.tensor(X, dtype=torch.float32).to(DEVICE)
 
 model = build_v1(legacy_dim=36, modern_dim=X.shape[1])
-model.load_state_dict(torch.load(ROOT_DIR / "models" / "holographic_master_v1.pth", map_location=DEVICE))
+model.load_state_dict(torch.load(ROOT_DIR / "models" / "tunneling_v1.pth", map_location=DEVICE))
 model.to(DEVICE)
 model.eval()
 

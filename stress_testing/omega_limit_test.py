@@ -101,7 +101,7 @@ y_c = torch.tensor(y_c, dtype=torch.long).to(DEVICE)
 
 print(Fore.CYAN + "Loading model..." + Style.RESET_ALL)
 model = build_v1(legacy_dim=X_k.shape[1], modern_dim=X_c.shape[1])
-model.load_state_dict(torch.load(ROOT_DIR / "models" / "holographic_master_v1.pth", map_location=DEVICE))
+model.load_state_dict(torch.load(ROOT_DIR / "models" / "tunneling_v1.pth", map_location=DEVICE))
 model.to(DEVICE)
 model.eval()
 print(Fore.GREEN + "Model loaded successfully.\n" + Style.RESET_ALL)

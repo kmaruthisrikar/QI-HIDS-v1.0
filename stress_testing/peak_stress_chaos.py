@@ -47,7 +47,7 @@ def run_peak_chaos():
     
     # Model Setup
     model = build_v1(legacy_dim=k_dim, modern_dim=c_dim)
-    model.load_state_dict(torch.load(ROOT_DIR / "models" / "holographic_master_v1.pth", map_location='cpu'))
+    model.load_state_dict(torch.load(ROOT_DIR / "models" / "tunneling_v1.pth", map_location='cpu'))
     model.eval()
 
     # 2. THE CHAOS INDUCTOR (Simultaneous Multi-Vector Attack)

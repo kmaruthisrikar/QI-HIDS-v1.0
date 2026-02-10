@@ -35,7 +35,7 @@ def main():
         return
 
     model = build_v1(legacy_dim=k_dim, modern_dim=c_dim)
-    model.load_state_dict(torch.load(ROOT_DIR / "models" / "holographic_master_v1.pth", map_location=device))
+    model.load_state_dict(torch.load(ROOT_DIR / "models" / "tunneling_v1.pth", map_location=device))
     model.eval()
     
     print("\n--- INITIATING PERFECT STORM ATTACK ---")

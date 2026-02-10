@@ -90,8 +90,8 @@ def train():
         print(f"Epoch {epoch+1}/{epochs} | Loss: {total_loss/len(loader_kdd):.4f}")
 
     # Save
-    torch.save(model.state_dict(), "models/holographic_master_v1.pth")
-    print("Model saved to models/holographic_master_v1.pth")
+    torch.save(model.state_dict(), "models/tunneling_v1.pth")
+    print("Model saved to models/tunneling_v1.pth")
 
 if __name__ == "__main__":
     train()

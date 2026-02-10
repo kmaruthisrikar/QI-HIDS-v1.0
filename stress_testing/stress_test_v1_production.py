@@ -26,7 +26,7 @@ def run_production_stress():
     print("="*80 + Style.RESET_ALL)
     
     # 1. Load the Production Engine
-    pkl_path = ROOT_DIR / "models" / "holographic_master_v1.pkl"
+    pkl_path = ROOT_DIR / "models" / "tunneling_v1.pkl"
     print(f"📦 Loading Production Engine: {pkl_path}")
     
     with open(pkl_path, 'rb') as f:

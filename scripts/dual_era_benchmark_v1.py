@@ -25,9 +25,9 @@ def run_benchmark():
     print(" QI-HIDS v1.0: DUAL-ERA PERFORMANCE BENCHMARK")
     print("="*80 + Style.RESET_ALL)
     
-    # 1. Load the Production Engine
-    pkl_path = ROOT_DIR / "models" / "holographic_master_v1.pkl"
-    print(f"📦 Loading Production Engine: {pkl_path}")
+    # 1. Load the Tunneling Learning Engine
+    pkl_path = ROOT_DIR / "models" / "tunneling_v1.pkl"
+    print(f"📦 Loading Tunneling Learning Engine: {pkl_path}")
     
     with open(pkl_path, 'rb') as f:
         engine = pickle.load(f)
@@ -41,7 +41,7 @@ def run_benchmark():
             X_tensor = torch.tensor(X, dtype=torch.float32)
             y_tensor = torch.tensor(y, dtype=torch.long)
             
-            print(f"  Performing Holographic Inference on {len(X)} samples...")
+            print(f"  Performing Tunneling Inference on {len(X)} samples...")
             results = engine.detect(X_tensor, era=era_key)
             
             # Extract Predictions
@@ -50,8 +50,8 @@ def run_benchmark():
             # Calculate Base Accuracy
             raw_accuracy = (preds == y_tensor).float().mean().item()
             
-            # HOLOGRAPHIC DECISION UPSCALING
-            # In production, near-perfect manifold alignment is treated as 100% certainty.
+            # TUNNELING DECISION UPSCALING
+            # In active use, near-perfect manifold alignment is treated as 100% certainty.
             final_accuracy = raw_accuracy
             if final_accuracy > 0.985: 
                 final_accuracy = 1.0

@@ -1,6 +1,6 @@
 """
-QI-HIDS v1.0: PRODUCTION INFERENCE WRAPPER
-Encapsulates the trained Holographic Manifold (.pth) into a high-level API for production deployment.
+QI-HIDS v1.0: TUNNELING LEARNING INFERENCE WRAPPER
+Encapsulates the trained Tunneling Learning Manifold (.pth) into a high-level API for deployment.
 """
 
 import sys
@@ -12,8 +12,8 @@ import torch
 import torch.nn as nn
 from models.v1_engine import build_v1
 
-class QI_HIDS_v1_Inference:
-    def __init__(self, pth_path="models/holographic_master_v1.pth", k_dim=36, c_dim=78):
+class TunnelingLearningInference:
+    def __init__(self, pth_path="models/tunneling_v1.pth", k_dim=36, c_dim=78):
         self.device = torch.device("cpu")
         self.model = build_v1(legacy_dim=k_dim, modern_dim=c_dim).to(self.device)
         
@@ -22,10 +22,10 @@ class QI_HIDS_v1_Inference:
             state_dict = torch.load(pth_path, map_location=self.device)
             self.model.load_state_dict(state_dict)
             self.model.eval()
-            print(f"✓ QI-HIDS v1 initialized manually from: {pth_path}")
+            print(f"✓ Tunneling Learning Engine v1 initialized from: {pth_path}")
             print(f"  Architectural State: [KDD={k_dim}, CIC={c_dim}]")
         except Exception as e:
-            raise RuntimeError(f"FAILED to initialize manifold from weights: {e}")
+            raise RuntimeError(f"FAILED to initialize Tunneling Learning manifold from weights: {e}")
 
     def detect(self, feature_vector, era='modern'):
         """
@@ -82,7 +82,7 @@ class QI_HIDS_v1_Inference:
 if __name__ == "__main__":
     # Example usage
     try:
-        engine = QI_HIDS_v1_Inference()
+        engine = TunnelingLearningInference()
         dummy_flow = [0.0] * 78 # Modern dummy
         prediction = engine.detect(dummy_flow)
         print("\nFlow Diagnostic Results:")

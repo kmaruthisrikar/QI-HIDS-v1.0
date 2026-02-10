@@ -1,5 +1,5 @@
 # 🚀 QI-HIDS v1.0: IMPLEMENTATION & USAGE GUIDE
-## *Utilizing the Holographic Manifold*
+## *Utilizing the Tunneling Learning Manifold*
 
 ---
 
@@ -30,7 +30,7 @@ import pickle
 import torch
 
 # 1. Load the entire engine
-with open("models/holographic_master_v1.pkl", 'rb') as f:
+with open("models/tunneling_v1.pkl", 'rb') as f:
     engine = pickle.load(f)
 
 # 2. Prepare features (example: Modern/78-dim)
@@ -50,12 +50,12 @@ Use this if you need more control over the device (e.g., forcing GPU) or if you 
 
 ### Usage:
 ```python
-from models.holographic_master_v1_api import QI_HIDS_v1_Inference
+from models.tunneling_v1_api import TunnelingLearningInference
 
 # 1. Initialize the inference wrapper
 # Automatically loads architecture and maps weights
-engine = QI_HIDS_v1_Inference(
-    pth_path="models/holographic_master_v1.pth",
+engine = TunnelingLearningInference(
+    pth_path="models/tunneling_v1.pth",
     k_dim=36,
     c_dim=78
 )
@@ -106,7 +106,7 @@ def monitor_stream(flow_provider):
 ```
 
 ### 📊 Behavioral Visualization (Manifold Extraction)
-If you want to see the "Geometric Shape" of your traffic in the 128-dimensional Holographic Space:
+If you want to see the "Geometric Shape" of your traffic in the 128-dimensional Tunneling Space:
 ```python
 # Returns 128-dim latent vector
 latent_vector = engine.get_manifold_state(flow, era='modern')

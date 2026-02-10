@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT_DIR))
 
-from models.holographic_master_v1_api import QI_HIDS_v1_Inference
+from models.tunneling_v1_api import TunnelingLearningInference
 
 def crystallize():
     print("💎 Crystallizing QI-HIDS v1 Manifold...")
@@ -24,14 +24,14 @@ def crystallize():
     c_dim = 78
     
     try:
-        engine = QI_HIDS_v1_Inference(
-            pth_path="models/holographic_master_v1.pth",
+        engine = TunnelingLearningInference(
+            pth_path="models/tunneling_v1.pth",
             k_dim=k_dim,
             c_dim=c_dim
         )
         
         # Save the entire instance
-        save_path = ROOT_DIR / "models" / "holographic_master_v1.pkl"
+        save_path = ROOT_DIR / "models" / "tunneling_v1.pkl"
         with open(save_path, 'wb') as f:
             pickle.dump(engine, f)
             

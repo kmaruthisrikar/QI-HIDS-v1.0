@@ -23,7 +23,7 @@ wheels/
 *.egg
 
 # Data
-data/
+# data/ (Uncommented to allow upload)
 
 # OS
 .DS_Store

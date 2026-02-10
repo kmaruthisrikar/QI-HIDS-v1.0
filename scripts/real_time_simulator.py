@@ -24,9 +24,10 @@ RESET = "\033[0m"
 def run_real_time_simulation():
     print(f"{CYAN}{BOLD}=== QI-HIDS v1.0: REAL-TIME STREAM SIMULATOR ==={RESET}")
     print(f"{YELLOW}Status: Initializing Tunneling Learning Engine...{RESET}")
+    print(f"{YELLOW}Architecture: Underpinning by the Tunneling Learning (TL) Paradigm...{RESET}")
     
     # 1. Load Model
-    pkl_path = ROOT_DIR / "models" / "holographic_master_v1.pkl"
+    pkl_path = ROOT_DIR / "models" / "tunneling_v1.pkl"
     if not pkl_path.exists():
         print(f"{RED}Error: Model file (.pkl) not found! Run scripts/crystallize_v1.py first.{RESET}")
         return

@@ -26,7 +26,7 @@ def run_stress_tests():
 
     model = build_v1(legacy_dim=k_dim, modern_dim=c_dim)
     try:
-        model.load_state_dict(torch.load("models/holographic_master_v1.pth"))
+        model.load_state_dict(torch.load("models/tunneling_v1.pth"))
         print("Loaded trained model weights.")
     except Exception as e:
         print(f"WARNING: No trained weights found ({e}). Using random init.")

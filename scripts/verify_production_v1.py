@@ -11,10 +11,10 @@ from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT_DIR))
 
-def verify_production():
-    pkl_path = ROOT_DIR / "models" / "holographic_master_v1.pkl"
+def verify_active_manifold():
+    pkl_path = ROOT_DIR / "models" / "tunneling_v1.pkl"
     
-    print(f"📦 Loading Production Model: {pkl_path}")
+    print(f"📦 Loading Tunneling Learning Engine: {pkl_path}")
     
     with open(pkl_path, 'rb') as f:
         # Load the entire engine instance
@@ -34,4 +34,4 @@ def verify_production():
     print(f"  Modern Prediction: {res_m[0]['prediction']} | Conf: {res_m[0]['confidence']} | Status: {res_m[0]['status']}")
 
 if __name__ == "__main__":
-    verify_production()
+    verify_active_manifold()

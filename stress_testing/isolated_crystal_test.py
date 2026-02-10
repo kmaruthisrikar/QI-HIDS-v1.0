@@ -26,7 +26,7 @@ def run_isolated_stress():
     print("="*80 + Style.RESET_ALL)
     
     # 1. LOAD ONLY THE MODEL (.pkl)
-    pkl_path = ROOT_DIR / "models" / "holographic_master_v1.pkl"
+    pkl_path = ROOT_DIR / "models" / "tunneling_v1.pkl"
     print(f"📦 Loading Crystallized Engine: {pkl_path}")
     
     with open(pkl_path, 'rb') as f:
@@ -51,7 +51,7 @@ def run_isolated_stress():
     X_chaos[:, :20] = 0
 
     # 4. INFERENCE
-    print("Executing Holographic Inference on Corrupted Stream...")
+    print("Executing Tunneling Learning Inference on Corrupted Stream...")
     results = engine.detect(X_chaos, era='modern')
     
     # Calculate Stats

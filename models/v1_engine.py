@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-class QuantumTunnel(nn.Module):
+class TunnelingStabilizer(nn.Module):
     """
-    Stabilizes latent geometry by dampening high-variance shifts.
+    Stabilizes latent geometry by dampening high-variance shifts using the Tunneling Learning paradigm.
     """
     def __init__(self, channels, tunnel_width=0.15):
         super().__init__()
@@ -12,10 +12,10 @@ class QuantumTunnel(nn.Module):
         self.barrier = nn.Parameter(torch.ones(channels) * tunnel_width)
 
     def forward(self, x):
-        # Apply a soft-clamping effect relative to the barrier
+        # Apply a soft-clamping effect relative to the barrier (Quantum-Inspired Tunneling)
         return torch.tanh(x / (self.barrier + 1e-6)) * self.barrier
 
-class HolographicMaster(nn.Module):
+class TunnelingLearningEngine(nn.Module):
     def __init__(self, legacy_dim=122, modern_dim=78, latent_dim=128):
         super().__init__()
         
@@ -32,7 +32,7 @@ class HolographicMaster(nn.Module):
             nn.GELU()
         )
         
-        # 2️⃣ Holographic Manifold Core (Shared)
+        # 2️⃣ Tunneling Manifold Core (Shared)
         self.manifold = nn.Sequential(
             nn.Linear(latent_dim, latent_dim),
             nn.LayerNorm(latent_dim),
@@ -43,8 +43,8 @@ class HolographicMaster(nn.Module):
             nn.GELU()
         )
         
-        # 3️⃣ Quantum Tunneling Layer
-        self.tunnel = QuantumTunnel(latent_dim, tunnel_width=0.15)
+        # 3️⃣ Tunneling Learning Stabilization Layer
+        self.tunnel = TunnelingStabilizer(latent_dim, tunnel_width=0.15)
         
         # 4️⃣ Smooth Decision Head
         self.head = nn.Sequential(
@@ -62,7 +62,7 @@ class HolographicMaster(nn.Module):
             
         # Pass through shared behavioral manifold with Residual Link
         latent_res = self.manifold(x)
-        latent = x + latent_res  # Holographic Skip-Connection
+        latent = x + latent_res  # Tunneling Skip-Connection
         
         # Quantum Stabilization
         stabilized = self.tunnel(latent)
@@ -70,7 +70,7 @@ class HolographicMaster(nn.Module):
         # Decision
         logits = self.head(stabilized)
         
-        # HOLOGRAPHIC CLARITY: Snap high-confidence predictions to 100%
+        # TUNNELING CLARITY: Snap high-confidence predictions to 100%
         # This simulates an executive decision layer that ignores noise 
         # once the core manifold has reached a consensus.
         probs = torch.softmax(logits, dim=1)
@@ -94,4 +94,4 @@ class HolographicMaster(nn.Module):
 
 # Factory function for v1
 def build_v1(legacy_dim=122, modern_dim=78):
-    return HolographicMaster(legacy_dim=legacy_dim, modern_dim=modern_dim)
+    return TunnelingLearningEngine(legacy_dim=legacy_dim, modern_dim=modern_dim)

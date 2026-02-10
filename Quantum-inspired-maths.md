@@ -5,7 +5,7 @@
 
 ## 🧱 THE TUNNELING LEARNING (TL) PARADIGM
 
-This project establishes the **Tunneling Learning (TL)** paradigm—a novel machine learning framework that replaces traditional statistical pattern matching with structural manifold stabilization. By transposing principles from quantum tunneling into classical neural architectures, TL enables robust feature extraction across asymmetric data domains (Era-Invariance) and unmatched resilience to information degradation (Holographic Persistence).
+This project establishes the **Tunneling Learning (TL)** paradigm—a novel machine learning framework that replaces traditional statistical pattern matching with structural manifold stabilization. By transposing principles from quantum tunneling into classical neural architectures, TL enables robust feature extraction across asymmetric data domains (Era-Invariance) and unmatched resilience to information degradation (Tunneling Learning Persistence).
 
 ---
 
@@ -695,7 +695,7 @@ Where:
 ### Result:
 
 **QI-HIDS v1.0 achieves 100% accuracy even with:**
-- 80% data loss (holographic property)
+- 80% data loss (Tunneling Learning property)
 - Extreme noise (σ = 0.5)
 - Adversarial attacks (ε = 0.20)
 

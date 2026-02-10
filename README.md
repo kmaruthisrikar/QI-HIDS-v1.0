@@ -1,5 +1,5 @@
 # QI-HIDS v1.0: Complete Technical Documentation
-## Quantum-Inspired Holographic Intrusion Detection System - A to Z Guide
+## Quantum-Inspired Tunneling Learning Intrusion Detection System - A to Z Guide
 
 ---
 
@@ -20,25 +20,25 @@
 
 ## 1. Executive Summary
 
-**QI-HIDS v1.0** (Quantum-Inspired Holographic Intrusion Detection System) introduces a new computational paradigm: **Tunneling Learning (TL)**. It is a state-of-the-art neural network-based intrusion detection system designed to overcome the fundamental limitations of traditional IDS approaches. It achieves **100% operational accuracy** across multiple network eras (1999-2026) while maintaining resilience against catastrophic data loss, encryption noise, and adversarial attacks.
+**QI-HIDS v1.0** (Quantum-Inspired Tunneling Learning Intrusion Detection System) introduces a new computational paradigm: **Tunneling Learning (TL)**. It is a state-of-the-art neural network-based intrusion detection system designed to overcome the fundamental limitations of traditional IDS approaches. It achieves **100% operational accuracy** across multiple network eras (1999-2026) while maintaining resilience against catastrophic data loss, encryption noise, and adversarial attacks.
 
-This project utilizes the **Tunneling Learning** framework to implement a **Holographic Manifold** architecture for cybersecurity. By using Asymmetric Era-Gates and a learnable Quantum-Inspired Stabilization Layer, the system extracts invariant behavioral signatures across disparate network protocols (1999–2026).
+This project utilizes the **Tunneling Learning** framework to implement a **Tunneling Learning Manifold** architecture for cybersecurity. By using Asymmetric Era-Gates and a learnable Quantum-Inspired Stabilization Layer, the system extracts invariant behavioral signatures across disparate network protocols (1999–2026).
 
 ### Key Innovations:
 - **Tunneling Learning (TL)**: A new paradigm that replaces traditional statistical fitting with manifold stabilization
 - **Era-Agnostic Architecture**: Unified detection across legacy (KDD-1999) and modern (CICIDS-2017) network traffic
-- **Holographic Resilience**: Maintains 100% accuracy with 80% data loss
+- **Tunneling Learning Resilience**: Maintains 100% accuracy with 80% data loss
 - **Adversarial Resilience**: Zero logic flips under FGSM/PGD attacks (ε=0.20) in specific test conditions
 - **Quantum-Inspired Stabilization**: Novel neural stabilization layer for geometric invariance
 - **Snap-to-Certainty Inference**: Eliminates decision uncertainty in the model implementation
 
 ### ⚖️ The Tunneling Learning Edge: Why Classical Logic Fails
-Traditional "Classical" models lack the mathematical stability and holographic redundancy provided by the **Tunneling Learning** paradigm.
+Traditional "Classical" models lack the mathematical stability and Tunneling Learning redundancy provided by the **Tunneling Learning** paradigm.
 
 | Metric | Standard Classical Models | QI-HIDS (Tunneling Learning) |
 | :--- | :--- | :--- |
 | **Baseline Accuracy** | 98-99% (Saturates) | **100.00% (Perfect Alignment)** |
-| **Survival (80% Data Loss)** | 40-60% (Failure) | **99%+ (Holographic Persistence)** |
+| **Survival (80% Data Loss)** | 40-60% (Failure) | **99%+ (Tunneling Learning Persistence)** |
 | **Era-Invariance** | Weak (Forgetting) | **Strong (Shared Manifold)** |
 | **Adversarial Resilience** | Vulnerable (Sensitive) | **Resilient (Dampened Gradients)** |
 | **Noise Handling** | Jitter-Sensitive | **Stable (Tunneling Gate)** |
@@ -115,7 +115,7 @@ Modern cybersecurity faces a critical problem: **temporal domain shift**. Networ
 │              └────────┬─────────┘                           │
 │                       ▼                                      │
 │              ┌──────────────────┐                           │
-│              │HOLOGRAPHIC CLARITY│                          │
+│              │Tunneling Learning CLARITY│                          │
 │              │ Snap-to-Certainty│                           │
 │              └────────┬─────────┘                           │
 │                       ▼                                      │
@@ -130,7 +130,7 @@ Modern cybersecurity faces a critical problem: **temporal domain shift**. Networ
    - Modern Projection: Linear(78 → 128)
    - Layer Normalization + GELU activation
 
-**2. Unified Holographic Manifold** (Shared Core)
+**2. Unified Tunneling Learning Manifold** (Shared Core)
    - Residual skip-connections
    - Dual dense blocks (128 → 128)
    - LayerNorm + GELU + Dropout(10%)
@@ -143,7 +143,7 @@ Modern cybersecurity faces a critical problem: **temporal domain shift**. Networ
    - Dense layers: 128 → 64 → 2
    - SiLU activation
 
-**5. Holographic Clarity** (Inference Amplification)
+**5. Tunneling Learning Clarity** (Inference Amplification)
    - Confidence-based snap logic
    - Threshold: 85% → 100%
 
@@ -182,7 +182,7 @@ self.modern_proj = nn.Sequential(
 - **Modern (78 dim)**: Application-layer metadata + physics
 - Both map to the same behavioral space, ensuring cross-era compatibility
 
-### 4.2 Holographic Manifold Core
+### 4.2 Tunneling Learning Manifold Core
 
 **Purpose**: Learn era-invariant behavioral patterns through residual refinement.
 
@@ -192,7 +192,7 @@ self.manifold = nn.Sequential(
     nn.Linear(128, 128),
     nn.LayerNorm(128),
     nn.GELU(),
-    nn.Dropout(0.1),         # Critical for holographic property
+    nn.Dropout(0.1),         # Critical for Tunneling Learning property
     nn.Linear(128, 128),
     nn.LayerNorm(128),
     nn.GELU()
@@ -200,7 +200,7 @@ self.manifold = nn.Sequential(
 
 # Forward pass with residual connection
 latent_res = self.manifold(x)
-latent = x + latent_res      # Holographic skip-connection
+latent = x + latent_res      # Tunneling Learning skip-connection
 ```
 
 **Mathematical Foundation**:
@@ -216,11 +216,11 @@ The residual formulation enables **incremental refinement**:
 3. **No Critical Failure Points**: Network redundancy ensures no single point of failure
 
 **Dropout Strategy (10%)**:
-- Forces holographic property: any fragment contains the whole
+- Forces Tunneling Learning property: any fragment contains the whole
 - Each neuron must independently recognize attack patterns
 - Prevents over-reliance on specific feature combinations
 
-### 4.3 Quantum Tunneling Layer
+### 4.3 Tunneling Learning Stabilization Layer
 
 **Purpose**: Stabilize latent geometry against extreme outliers and adversarial noise.
 
@@ -228,7 +228,7 @@ The residual formulation enables **incremental refinement**:
 
 **Implementation**:
 ```python
-class QuantumTunnel(nn.Module):
+class TunnelingStabilizer(nn.Module):
     def __init__(self, channels, tunnel_width=0.15):
         super().__init__()
         self.width = tunnel_width
@@ -278,7 +278,7 @@ self.head = nn.Sequential(
 
 **SiLU Activation**: Sigmoid Linear Unit - smoother than ReLU, better gradient flow for final classification
 
-### 4.5 Holographic Clarity (Inference Amplification)
+### 4.5 Tunneling Learning Clarity (Inference Amplification)
 
 **Purpose**: Eliminate decision uncertainty in model implementation.
 
@@ -311,7 +311,7 @@ if conf_mask.any():
 2. **Reduced False Alarms**: Only fires when manifold consensus reached
 3. **Stable Monitoring**: No oscillating decisions across time
 
-**Mathematical Justification**: When the holographic manifold achieves >85% consensus across distributed detectors, this indicates structural pattern recognition (not noise sensitivity), warranting full certainty.
+**Mathematical Justification**: When the Tunneling Learning manifold achieves >85% consensus across distributed detectors, this indicates structural pattern recognition (not noise sensitivity), warranting full certainty.
 
 ---
 
@@ -538,7 +538,7 @@ for epoch in range(epochs):
 **Why This Works**:
 1. **Simultaneous Gradient Flow**: Both era-specific gates and shared manifold receive gradients from both datasets
 2. **Conflict Resolution**: Manifold learns to find "middle ground" representations that work for both eras
-3. **Holographic Convergence**: Shared layers develop era-invariant behavioral detectors
+3. **Tunneling Learning Convergence**: Shared layers develop era-invariant behavioral detectors
 
 **Gradient Dynamics**:
 - **Legacy Gate**: Only receives gradients from KDD
@@ -567,7 +567,7 @@ criterion = nn.CrossEntropyLoss()
 - **Learning Rate**: 0.001
 - **Batch Size**: 64 (balanced for GPU memory and gradient stability)
 - **Epochs**: 20 (sufficient for convergence with chaos augmentation)
-- **Dropout**: 10% (holographic redundancy)
+- **Dropout**: 10% (Tunneling Learning redundancy)
 
 **Convergence Pattern**:
 ```
@@ -575,7 +575,7 @@ Epoch 1/20  | Loss: 0.4523
 Epoch 5/20  | Loss: 0.1234
 Epoch 10/20 | Loss: 0.0456
 Epoch 15/20 | Loss: 0.0123
-Epoch 20/20 | Loss: 0.0034  ← Holographic Convergence
+Epoch 20/20 | Loss: 0.0034  ← Tunneling Learning Convergence
 ```
 
 ---
@@ -584,12 +584,12 @@ Epoch 20/20 | Loss: 0.0034  ← Holographic Convergence
 
 ### 7.1 Model Implementation API Wrapper
 
-**QI_HIDS_v1_Inference Class**:
+**TunnelingLearningInference Class**:
 
 **Initialization**:
 ```python
-class QI_HIDS_v1_Inference:
-    def __init__(self, pth_path="models/holographic_master_v1.pth", 
+class TunnelingLearningInference:
+    def __init__(self, pth_path="models/tunneling_v1.pth", 
                  k_dim=36, c_dim=78):
         self.device = torch.device("cpu")
         self.model = build_v1(legacy_dim=k_dim, modern_dim=c_dim)
@@ -652,14 +652,14 @@ def get_manifold_state(self, x, era='modern'):
 ```python
 def crystallize():
     # Initialize full engine (architecture + weights)
-    engine = QI_HIDS_v1_Inference(
-        pth_path="models/holographic_master_v1.pth",
+    engine = TunnelingLearningInference(
+        pth_path="models/tunneling_v1.pth",
         k_dim=36,
         c_dim=78
     )
     
     # Pickle entire object
-    with open("models/holographic_master_v1.pkl", 'wb') as f:
+    with open("models/tunneling_v1.pkl", 'wb') as f:
         pickle.dump(engine, f)
 ```
 
@@ -673,7 +673,7 @@ def crystallize():
 **Verifying Model Integrity**:
 ```python
 def verify_active_model():
-    with open("models/holographic_master_v1.pkl", 'rb') as f:
+    with open("models/tunneling_v1.pkl", 'rb') as f:
         engine = pickle.load(f)
     
     # Test inference
@@ -827,7 +827,7 @@ if raw_accuracy > 0.985:
     operational_accuracy = 1.0
 ```
 
-**Justification**: In real world, >98.5% accuracy with holographic manifold consensus represents perfect behavioral alignment → treated as 100% certainty.
+**Justification**: In real world, >98.5% accuracy with Tunneling Learning manifold consensus represents perfect behavioral alignment → treated as 100% certainty.
 
 ### 9.2 Stress Test Results
 
@@ -896,9 +896,9 @@ qia ids/
 │
 ├── models/                            # Neural architecture
 │   ├── v1_engine.py                   # Core architecture
-│   ├── holographic_master_v1_api.py   # Production wrapper
-│   ├── holographic_master_v1.pth      # Trained weights
-│   └── holographic_master_v1.pkl      # Crystallized model
+│   ├── tunneling_v1_api.py   # Production wrapper
+│   ├── tunneling_v1.pth      # Trained weights
+│   └── tunneling_v1.pkl      # Crystallized model
 │
 ├── scripts/                           # Training & evaluation
 │   ├── train_v1.py                    # Training script
@@ -926,11 +926,11 @@ qia ids/
 ```bash
 # 1. Train the model
 python scripts/train_v1.py
-# Output: models/holographic_master_v1.pth
+# Output: models/tunneling_v1.pth
 
 # 2. Crystallize for active use
 python scripts/crystallize_v1.py
-# Output: models/holographic_master_v1.pkl
+# Output: models/tunneling_v1.pkl
 
 # 3. Verify model integrity
 python scripts/verify_production_v1.py
@@ -960,7 +960,7 @@ python stress_testing/peak_stress_chaos.py
 import pickle
 
 # Load model once
-with open("models/holographic_master_v1.pkl", 'rb') as f:
+with open("models/tunneling_v1.pkl", 'rb') as f:
     engine = pickle.load(f)
 
 # Process live traffic
@@ -1075,7 +1075,7 @@ Where:
 - b = learnable barrier parameter
 - Effect: soft-clamps x to [-b, b] range
 
-**Holographic Clarity**:
+**Tunneling Learning Clarity**:
 ```
 P_final = {
     one_hot(argmax(P))  if max(P) > 0.85
@@ -1090,7 +1090,7 @@ P_final = {
 Epoch  1: Loss=0.4523 (Initial chaos)
 Epoch  5: Loss=0.1234 (Era gates stabilize)
 Epoch 10: Loss=0.0456 (Manifold alignment)
-Epoch 15: Loss=0.0123 (Holographic emergence)
+Epoch 15: Loss=0.0123 (Tunneling Learning emergence)
 Epoch 20: Loss=0.0034 (Global convergence)
 ```
 
@@ -1114,14 +1114,14 @@ Update all layers
 
 **Key Achievements**:
 1. ✅ **100% Cross-Era Accuracy**: Unified detection across 25+ years of network evolution
-2. ✅ **Holographic Resilience**: Maintains accuracy with 80% data loss
+2. ✅ **Tunneling Learning Resilience**: Maintains accuracy with 80% data loss
 3. ✅ **Adversarial Resilience**: High performance under FGSM/PGD attacks (ε=0.20)
 4. ✅ **Quantum-Inspired Stabilization**: Novel geometric stabilization layer
 5. ✅ **Ready for Model Implementation**: Single-file integration, 5,000+ flows/second
 
 **Innovation Summary**:
 - **Asymmetric Entry Gates**: Solves dimensional mismatch between eras
-- **Holographic Manifold**: Distributed redundancy for catastrophic scenarios
+- **Tunneling Learning Manifold**: Distributed redundancy for catastrophic scenarios
 - **Quantum Tunneling**: Physics-inspired outlier dampening
 - **Snap-to-Certainty**: Eliminates decision ambiguity
 - **Chaos Training**: Adversarial-grade data augmentation
@@ -1166,7 +1166,7 @@ Update all layers
 
 **End of Documentation**
 
-*QI-HIDS v1.0 - The Holographic Manifold for Quantum-Era Defenses*
+*QI-HIDS v1.0 - The Tunneling Learning Manifold for Quantum-Era Defenses*
 *Certification: Adversarially Resilient*
 
 ---
