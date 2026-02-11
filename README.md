@@ -20,6 +20,7 @@
 8. [Stress Testing Framework](#8-stress-testing-framework)
 9. [Performance Benchmarks](#9-performance-benchmarks)
 10. [Technical Implementation Details](#10-technical-implementation-details)
+11. [Universal Tunneling Learning Library](#11-universal-tunneling-learning-library-beyond-ids)
 
 ---
 
@@ -899,13 +900,18 @@ qia ids/
 │   ├── kdd_loader.py                  # KDD data pipeline
 │   └── cicids2017_loader.py           # CICIDS data pipeline
 │
-├── models/                            # Neural architecture
+├── models/ 
 │   ├── v1_engine.py                   # Core architecture
 │   ├── tunneling_v1_api.py   # Production wrapper
 │   ├── tunneling_v1.pth      # Trained weights
-│   └── tunneling_v1.pkl      # Crystallized model
+│   └── tunneling_v1.pkl      # Crystallized model                          
+│   ├── tunneling_lib.py               # Universal Tunneling Library (The Core)
+│   ├── v1_engine.py                   # Production Adapter (Legacy+Modern)
+│   ├── tunneling_v1_api.py            # Inference Wrapper
+│   └── tunneling_v1.pkl               # Crystallized Model
 │
 ├── scripts/                           # Training & evaluation
+│   ├── library_demo.py                # Library usage tutorial
 │   ├── train_v1.py                    # Training script
 │   ├── crystallize_v1.py              # Model packaging
 │   ├── dual_era_benchmark_v1.py       # Cross-era evaluation
@@ -1148,6 +1154,39 @@ Update all layers
 - Multi-class attack classification
 - Federated learning for distributed networks
 - Hardware acceleration (FPGA/ASIC integration)
+
+---
+
+### 11 Universal Tunneling Learning Library: Beyond IDS
+
+**The Tunneling Learning Paradigm**:
+While demonstrated here on Network Intrusion Detection (IDS), the **Tunneling Learning** architecture is a general-purpose solution for ANY AI system facing:
+1.  **Multi-Modal Inputs**: Combining data sources with different dimensions (e.g., IoT Sensors + Server Logs + Audio).
+2.  **Chaotic Environments**: High-noise, high-variance data streams.
+3.  **Adversarial Threats**: Systems needing resilience against gradient-based attacks.
+
+**Library File**: `models/tunneling_lib.py`
+
+**Universal Usage Pattern**:
+You can use `TunnelingNetwork` to stabilize *any* chaotic dataset, not just network traffic.
+
+```python
+from models.tunneling_lib import TunnelingNetwork
+
+# 1. Initialize the Shared Brain
+model = UniversalTunnelingNetwork(latent_dim=128)
+
+# 2. Add ANY Data Sources (e.g., Financial Tickers, Medical Vitals)
+model.add_dataset('crypto_market', input_dim=50)   # High noise!
+model.add_dataset('stable_bonds', input_dim=10)    # Low noise
+
+# 3. Route & Stabilize
+# The 'normalize' function ensures Z-score scaling for the Tunneling Layer
+clean_crypto = UniversalTunnelingNetwork.normalize(raw_crypto_data)
+output = model(clean_crypto, source='crypto_market')
+```
+
+This transforms the repository from a specific "IDS Project" into a **General-Purpose Geometric AI Framework**.
 
 ---
 
