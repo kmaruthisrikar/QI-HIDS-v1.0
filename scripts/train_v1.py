@@ -1,3 +1,4 @@
+
 import sys
 from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -7,6 +8,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import numpy as np
+import pandas as pd
 from torch.utils.data import DataLoader, TensorDataset
 from models.v1_engine import build_v1
 from loaders.kdd_loader import KDDLoader
@@ -19,24 +21,17 @@ class ChaosAugmentor:
     @staticmethod
     def apply(x, p=0.3):
         x_aug = x.clone()
-        
-        # 1. Feature Dropout (Telemetry Loss) - Aggressive 50% to match Scenario A
+        # 1. Feature Dropout (Telemetry Loss)
         mask = torch.rand_like(x_aug) > 0.5
         x_aug *= mask
-        
-        # 2. Gaussian Noise (Encryption Jitter) - Increased for robustness
+        # 2. Gaussian Noise (Encryption Jitter)
         noise = torch.randn_like(x_aug) * 0.1
         x_aug += noise
-        
-        # 3. Header Zeroing (Protocol Obfuscation)
-        if np.random.rand() < 0.3:
-            x_aug[:, :10] = 0
-            
         return x_aug
 
 def train():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print(f"Training on {device}")
+    print(f"Training on {device} (V1 Mainline: [KDD, CICIDS])")
     
     # Init Loaders
     kdd_loader = KDDLoader()
@@ -58,6 +53,21 @@ def train():
     loader_cic = DataLoader(train_cic, batch_size=64, shuffle=True)
     
     model = build_v1(legacy_dim=k_dim, modern_dim=c_dim).to(device)
+    
+    # -------------------------------------------------------------
+    # ⚡ HOW TO ADD A NEW DATASET (e.g., STEALTH V2) ⚡
+    # -------------------------------------------------------------
+    # 1. Load your new data
+    #    X_new, y_new = my_loader.load_data()
+    #    new_dim = X_new.shape[1]
+    #
+    # 2. Add the Gate dynamically (The Library Magic ✨)
+    #    model.add_dataset('stealth', input_dim=new_dim)
+    #    model.to(device) # Push new gate to GPU
+    #
+    # 3. Add to Training Loop (below)
+    # -------------------------------------------------------------
+    
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     criterion = nn.CrossEntropyLoss()
     
@@ -73,14 +83,23 @@ def train():
             # --- Legacy Pass (KDD) ---
             x_k, y_k = batch_kdd
             x_k = ChaosAugmentor.apply(x_k.to(device))
-            out_k = model(x_k, era='legacy')
+            out_k = model(x_k, source='legacy')
             loss_k = criterion(out_k, y_k.to(device))
             
             # --- Modern Pass (CIC) ---
             x_c, y_c = batch_cic
             x_c = ChaosAugmentor.apply(x_c.to(device))
-            out_c = model(x_c, era='modern')
+            out_c = model(x_c, source='modern')
             loss_c = criterion(out_c, y_c.to(device))
+            
+            # -----------------------------------------------------------------
+            # ⚡ (Optional) New Dataset Training ⚡
+            # -----------------------------------------------------------------
+            # x_v2, y_v2 = batch_stealth
+            # out_v2 = model(x_v2, source='stealth') <<-- KEY LIBRARY USAGE
+            # loss_v2 = criterion(out_v2, y_v2)
+            # loss += loss_v2
+            # -----------------------------------------------------------------
             
             loss = loss_k + loss_c
             loss.backward()

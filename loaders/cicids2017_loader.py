@@ -41,4 +41,8 @@ class CICIDS2017Loader:
         X_clean = X_raw.replace([np.inf, -np.inf], np.nan).fillna(0)
         
         self.feature_names = X_clean.columns.tolist()
-        return self.scaler.fit_transform(X_clean.values), y
+        self.feature_names = X_clean.columns.tolist()
+        
+        # USE UNIVERSAL LIBRARY SCALING
+        from models.tunneling_lib import UniversalTunnelingNetwork
+        return UniversalTunnelingNetwork.normalize(X_clean.values), y

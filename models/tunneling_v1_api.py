@@ -1,6 +1,8 @@
+
 """
 QI-HIDS v1.0: TUNNELING LEARNING INFERENCE WRAPPER
 Encapsulates the trained Tunneling Learning Manifold (.pth) into a high-level API for deployment.
+Updated to support the Universal Tunneling Library.
 """
 
 import sys
@@ -41,8 +43,8 @@ class TunnelingLearningInference:
             feature_vector = feature_vector.unsqueeze(0)
             
         with torch.no_grad():
-            outputs = self.model(feature_vector, era=era)
-            # v1_engine already returns probabilities (Clarity Snapped)
+            # Universal Library uses 'source' instead of 'era'
+            outputs = self.model(feature_vector, source=era)
             
             # Extract Results
             confidences, classes = torch.max(outputs, dim=1)
@@ -68,10 +70,11 @@ class TunnelingLearningInference:
         if len(x.shape) == 1: x = x.unsqueeze(0)
             
         with torch.no_grad():
-            if era == 'legacy':
-                x = self.model.legacy_proj(x)
-            else:
-                x = self.model.modern_proj(x)
+            # Access dynamic gate via the library's dictionary
+            if era not in self.model.projections:
+                 raise ValueError(f"Unknown era/source: {era}")
+                 
+            x = self.model.projections[era](x)
                 
             latent_res = self.model.manifold(x)
             latent = x + latent_res
@@ -84,7 +87,7 @@ if __name__ == "__main__":
     try:
         engine = TunnelingLearningInference()
         dummy_flow = [0.0] * 78 # Modern dummy
-        prediction = engine.detect(dummy_flow)
+        prediction = engine.detect(dummy_flow, era='modern')
         print("\nFlow Diagnostic Results:")
         print(prediction)
     except Exception as e:

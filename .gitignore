@@ -28,6 +28,7 @@ wheels/
 # OS
 .DS_Store
 Thumbs.db
+Desktop.ini
 
 # Environments
 .env
@@ -38,3 +39,4 @@ ENV/
 # IDEs
 .vscode/
 .idea/
+data/

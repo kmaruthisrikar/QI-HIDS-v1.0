@@ -46,4 +46,8 @@ class KDDLoader:
         X_numeric = X.select_dtypes(include=[np.number])
         
         print(f"  KDD Features Extracted: {X_numeric.shape[1]} numeric dimensions.")
-        return self.scaler.fit_transform(X_numeric.values), y
+        print(f"  KDD Features Extracted: {X_numeric.shape[1]} numeric dimensions.")
+        
+        # USE UNIVERSAL LIBRARY SCALING
+        from models.tunneling_lib import UniversalTunnelingNetwork
+        return UniversalTunnelingNetwork.normalize(X_numeric.values), y
