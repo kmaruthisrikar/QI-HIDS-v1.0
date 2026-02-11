@@ -1181,7 +1181,9 @@ model.add_dataset('crypto_market', input_dim=50)   # High noise!
 model.add_dataset('stable_bonds', input_dim=10)    # Low noise
 
 # 3. Route & Stabilize
-# The 'normalize' function ensures Z-score scaling for the Tunneling Layer
+# ⚡ CRITICAL: The library includes a built-in Z-Score Normalization engine.
+# The 'normalize' function automatically applies (x - μ) / σ to scale inputs
+# into the optimal range [-2, 2] for the Quantum Tunneling activation.
 clean_crypto = UniversalTunnelingNetwork.normalize(raw_crypto_data)
 output = model(clean_crypto, source='crypto_market')
 ```
